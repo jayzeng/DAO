@@ -13,4 +13,12 @@
             <directory>../Dao</directory>
         </testsuite>
     </testsuites>
+    <php>
+        <DB_HOST>127.0.0.1</DB_HOST>
+        <DB_USERNAME>root</DB_USERNAME>
+        <DB_PASSWORD>''</DB_PASSWORD>
+        <DB_DBNAME>dbUnitTest</DB_DBNAME>
+        <DB_PORT></DB_PORT>
+        <DB_SOCKET></DB_SOCKET>
+    </php>
 </phpunit>
