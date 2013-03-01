@@ -7,7 +7,8 @@ php:
 services: mysql
 
 before_script:
-    - php ./Tests/Conf/setupDatabases.php
+    - mysql -u root -p'' < Tests/Conf/Sql/Setup/DbTestSetup.sql
+    - mysql -u root -p'' < Tests/Conf/Sql/Setup/InformationSchemaTestSetup.sql
 
 script:
     - phpunit --coverage-text --configuration Tests/Conf/phpunit.xml
