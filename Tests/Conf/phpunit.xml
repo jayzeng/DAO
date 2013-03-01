@@ -14,11 +14,11 @@
         </testsuite>
     </testsuites>
     <php>
-        <DB_HOST>127.0.0.1</DB_HOST>
-        <DB_USERNAME>root</DB_USERNAME>
-        <DB_PASSWORD>''</DB_PASSWORD>
-        <DB_DBNAME>dbUnitTest</DB_DBNAME>
-        <DB_PORT></DB_PORT>
-        <DB_SOCKET></DB_SOCKET>
+        <const name="DB_HOST" value="127.0.0.1"/>
+        <const name="DB_USERNAME" value="root"/>
+        <const name="DB_PASSWORD" value=""/>
+        <const name="DB_DBNAME" value="dbUnitTest"/>
+        <const name="DB_PORT" value=""/>
+        <const name="DB_SOCKET" value=""/>
     </php>
 </phpunit>
