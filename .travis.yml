@@ -13,4 +13,4 @@ script:
     - phpunit --coverage-text --configuration Tests/Conf/phpunit.xml
 
 after_script:
-    - php ./Tests/Conf/Travis/teardownDatabases.php
+    - php ./Tests/Conf/teardownDatabases.php
