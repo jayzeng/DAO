@@ -47,7 +47,7 @@ class Connection
      * );
      * </code>
      */
-    public function __construct(DriverInterface $driver, array $params = array()) {
+    public function __construct(\Dao\DriverInterface $driver, array $params = array()) {
         $this->_driver = $driver;
 
         if(isset($params)) {
