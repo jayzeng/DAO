@@ -4,8 +4,6 @@ php:
     - 5.3
     - 5.4
 
-services: mysql
-
 before_script:
     - mysql -e 'create database myapp_test;'
     - mysql < Tests/Conf/Sql/Setup/DbTestSetup.sql
