@@ -47,7 +47,7 @@ class Connection
      * );
      * </code>
      */
-    public function __construct(DriverInterface $driver, array $params = array()) {
+    public function __construct(\Dao\DriverInterface $driver, array $params = array()) {
         $this->_driver = $driver;
 
         if(isset($params)) {
@@ -136,7 +136,7 @@ class Connection
         $this->_resource = @new \mysqli($host,$username,$password,$dbname,(int)$port,$socket);
 
         if($this->_resource->connect_error) {
-            throw new Exception\ConnectionException(
+            throw new \Dao\Exception\ConnectionException(
                     $this->_resource->connect_error, $this->_resource->connect_errno, $host, $dbname
                     );
         }
@@ -228,7 +228,7 @@ class Connection
 
         if(false === $result) {
             // Throw an read exception
-            throw new Exception\ReadException(
+            throw new \Dao\Exception\ReadException(
                     $this->_resource->error,     // Internal error message
                     $this->_resource->errno,     // Internal error code
                     $query                       // Sql query
@@ -271,7 +271,7 @@ class Connection
             return $this->_resource->affected_rows > 0 ? true : false;
         }
 
-        throw new Exception\WriteException(
+        throw new \Dao\Exception\WriteException(
                 $this->_resource->error, $this->_resource->errno, $query
                 );
     }
@@ -289,7 +289,7 @@ class Connection
             return $this->_resource->affected_rows > 0 ? $this->_resource->insert_id : false;
         }
 
-        throw new Exception\WriteException(
+        throw new \Dao\Exception\WriteException(
                 $this->_resource->error, $this->_resource->errno, $query
                 );
     }
@@ -307,7 +307,7 @@ class Connection
             return $this->_resource->affected_rows > 0 ? true : false;
         }
 
-        throw new Exception\DeleteException(
+        throw new \Dao\Exception\DeleteException(
                 $this->_resource->error, $this->_resource->errno, $query
                 );
     }

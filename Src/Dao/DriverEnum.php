@@ -7,11 +7,12 @@
  * @version 0.1
  */
 namespace Dao;
+use \Util\Enum;
 
 /**
  * @package Dao
  */
-class DriverEnum
+class DriverEnum extends Enum
 {
     const MYSQLI = 'Mysqli';
     //const PDO = 'Pdo';
