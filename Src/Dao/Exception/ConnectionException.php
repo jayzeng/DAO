@@ -43,12 +43,10 @@ class ConnectionException extends AbstractException
      * @see DbExceptionInterface::getDetails()
      */
     public function getDetails() {
-        return $this->formatException(
-                sprintf('Host: %s %sDataBase: %s',
-                    $this->_host,
-                    PHP_EOL,
-                    isset($this->_database) ? $this->_database : 'Database is not provided'
-                    ).PHP_EOL
+        return sprintf('Host: %s %sDataBase: %s',
+                $this->_host,
+                PHP_EOL,
+                isset($this->_database) ? $this->_database : 'Database is not provided'
                 );
     }
 }
