@@ -6,5 +6,5 @@ ini_set('display_errors','On');
 ini_set('display_startup_errors','On');
 
 // Autload project level bootstrap file
-require_once( __DIR__ . DIRECTORY_SEPARATOR . '../Vendors/autoload.php' );
+require_once( __DIR__ . DIRECTORY_SEPARATOR . '../../Vendors/autoload.php' );
 ?>
