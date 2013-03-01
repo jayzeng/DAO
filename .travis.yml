@@ -10,9 +10,11 @@ before_script:
     - mysql -e 'create database myapp_test;'
     - mysql < Tests/Conf/Sql/Setup/DbTestSetup.sql
     - mysql < Tests/Conf/Sql/Setup/InformationSchemaTestSetup.sql
+    - curl -s http://getcomposer.org/installer | php
+    - php composer.phar install -v -o
 
 script:
     - phpunit --coverage-text --configuration Tests/Conf/phpunit.xml
 
 after_script:
-    - mysql < Tests/Conf/Sql/Teardown/DbTestSetup.sql
+    - mysql < Tests/Conf/Sql/Teardown/DbTestTeardown.sql
