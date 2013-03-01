@@ -40,11 +40,6 @@ class AdapterTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($noSuchDriver, $this->_adapter->getDriver());
 
         $this->assertFalse($this->_adapter->getDriverAdapter());
-        try {
-            $this->_adapter->getConnection();
-        } catch(\Dao\Exception\RuntimeException $e) {
-            $this->assertContains('Error Message: Driver '.$noSuchDriver.' is not supported.', (string)$e);
-        }
     }
 
     public function testDbAdapter() {
