@@ -15,4 +15,4 @@ script:
     - phpunit --coverage-text --configuration Tests/Conf/phpunit.xml
 
 after_script:
-    - php ./Tests/Conf/teardownDatabases.php
+    - mysql < Tests/Conf/Sql/Teardown/DbTestSetup.sql
