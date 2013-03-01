@@ -1,0 +1,16 @@
+<phpunit bootstrap="Bootstrap.php"
+         colors="true"
+         stopOnError="false"
+         stopOnFailure="false"
+         stopOnIncomplete="false"
+         stopOnSkipped="false"
+         convertErrorsToExceptions="false"
+         verbose="true"
+         strict="true"
+    >
+    <testsuites>
+        <testsuite name="DAO Test Suite" >
+            <directory>../Dao</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

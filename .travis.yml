@@ -1,0 +1,16 @@
+language: php
+
+php:
+    - 5.3
+    - 5.4
+
+services: mysql
+
+before_script:
+    - php ./Tests/Conf/setupDatabases.php
+
+script:
+    - phpunit --coverage-text --configuration Tests/Conf/phpunit.xml
+
+after_script:
+    - php ./Tests/Conf/Travis/teardownDatabases.php
