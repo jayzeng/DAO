@@ -3,6 +3,9 @@
 
 Project website: (http://jayzeng.github.com/DAO/)
 
+# Why reinvent the wheel?
+It is fun. And that's it.
+
 ##Usage:
 TO BE DONE
 
