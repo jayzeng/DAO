@@ -13,6 +13,11 @@
             <directory>../Dao</directory>
         </testsuite>
     </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">../Dao</directory>
+        </whitelist>
+    </filter>
     <php>
         <const name="DB_HOST" value="127.0.0.1"/>
         <const name="DB_USERNAME" value="root"/>
