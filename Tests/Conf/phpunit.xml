@@ -15,7 +15,7 @@
     </testsuites>
     <filter>
         <whitelist>
-            <directory suffix=".php">../Src</directory>
+            <directory suffix=".php">../Dao</directory>
         </whitelist>
     </filter>
     <php>
