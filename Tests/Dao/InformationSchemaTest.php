@@ -138,10 +138,10 @@ class InformationSchemaTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @todo affiliate_network.exchange_rates is probably not a good test input, as it may potentially be removed in the future
+     * test table status
      */
     public function testGetTableStatus() {
-        $this->assertInternalType('array', $this->_schema->getTableStatus('affiliate_network', 'exchange_rates'));
+        $this->assertInternalType('array', $this->_schema->getTableStatus('superFoo', 'awesomo'));
     }
 
     /**
