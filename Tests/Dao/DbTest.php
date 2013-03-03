@@ -70,12 +70,13 @@ class DbTest extends \PHPUnit_Framework_TestCase
 
     public function testResultSet() {
         $connection = \Dao\DbFactory::initDatabase($this->_config);
+
         //$this->prepareUnitTestTable();
         $names = array(
-                'jay'  => 'zeng',
-                'lee'  => 'brown',
-                'lucas'=> 'brown',
-                'beau' => 'hoyt'
+                'jay'     => 'zeng',
+                'john'    => 'smith',
+                'david'   => 'steve',
+                'awesome' => 'oops',
                 );
 
         // Hold down all the newly insert idsksdjfhaskdjfajksdfas
@@ -110,21 +111,21 @@ class DbTest extends \PHPUnit_Framework_TestCase
                             ),
                         array(
                             'employee_id' => 2,
-                            'first_name'  => 'lee',
-                            'last_name'   => 'brown'
+                            'first_name'  => 'john',
+                            'last_name'   => 'smith'
                             ),
                         array(
                             'employee_id' => 3,
-                            'first_name'  => 'lucas',
-                            'last_name'   => 'brown'
+                            'first_name'  => 'david',
+                            'last_name'   => 'steve'
                             ),
                         array(
                             'employee_id' => 4,
-                            'first_name'  => 'beau',
-                            'last_name'   => 'hoyt'
+                            'first_name'  => 'awesome',
+                            'last_name'   => 'oops'
                             )
-                        ),
-                $results
+                    ),
+                    $results
                 );
 
         // Test the explicit getNumberOfRows()
@@ -137,7 +138,9 @@ class DbTest extends \PHPUnit_Framework_TestCase
         $connection->delete('DELETE FROM dbUnitTest.Employee WHERE employee_id = 4');
 
         // Now we should only have 3 rows
-        $this->assertEquals(3, count($connection->select('SELECT * FROM dbUnitTest.Employee')));
+        $rows = ($connection->select('SELECT * FROM dbUnitTest.Employee'));
+
+        $this->assertCount(3, $connection->select('SELECT * FROM dbUnitTest.Employee'));
 
         // Fetch the 1st row of the result set
         $this->assertEquals(
